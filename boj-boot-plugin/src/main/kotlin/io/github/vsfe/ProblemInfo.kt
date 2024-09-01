@@ -1,4 +1,4 @@
-package org.vsfe
+package io.github.vsfe
 
 data class ProblemInfo(
     val problemNumber: Int,

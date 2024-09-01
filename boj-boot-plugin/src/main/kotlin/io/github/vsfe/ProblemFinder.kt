@@ -1,4 +1,4 @@
-package org.vsfe
+package io.github.vsfe
 
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document

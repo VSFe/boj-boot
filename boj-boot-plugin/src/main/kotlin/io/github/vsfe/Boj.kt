@@ -1,4 +1,4 @@
-package org.vsfe
+package io.github.vsfe
 
 import org.gradle.api.DefaultTask
 import org.gradle.api.Plugin
