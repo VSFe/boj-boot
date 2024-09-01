@@ -20,7 +20,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("io.github.vsfe:boj-boot-plugin:1.0.2")
+        classpath("io.github.vsfe:boj-boot-plugin:1.0.3")
     }
 }
 
@@ -29,7 +29,6 @@ apply(plugin = "io.github.vsfe.boj-boot-plugin")
 dependencies {
     implementation("io.github.vsfe:boj-commons:1.0.2")
 }
-
 ```
 
 - 또한, `settings.gradle.kts` (Groovy 사용 시 `settings.gradle`) 에 다음과 같은 내용을 추가해 주세요.
