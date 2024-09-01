@@ -1,5 +1,6 @@
 package io.github.vsfe
 
+import io.github.vsfe.exception.InvalidFormatException
 import org.gradle.api.DefaultTask
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -18,7 +19,9 @@ class BojBootPlugin : Plugin<Project> {
 abstract class BojTask : DefaultTask() {
     @TaskAction
     fun generateFiles() {
-        val problemNumber = if (project.hasProperty("problemNumber")) project.properties["problemNumber"].toString().toInt() else 0
+        val problemNumber = project.properties["problemNumber"]
+            ?.toString()
+            ?.toInt() ?: throw InvalidFormatException("Problem number parse failed.")
         val javaExtension = project.extensions.getByType(JavaPluginExtension::class.java)
         val mainSourceSet = javaExtension.sourceSets.getByName("main")
         val testSourceSet = javaExtension.sourceSets.getByName("test")
