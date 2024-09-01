@@ -4,8 +4,8 @@ plugins {
     id("maven-publish")
 }
 
-group = "org.vsfe"
-version = "1.0-SNAPSHOT"
+group = "io.github.vsfe"
+version = "1.0.1"
 
 repositories {
     mavenCentral()
@@ -15,19 +15,23 @@ repositories {
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
-    implementation("io.github.vsfe:boj-commons:1.0.0")
+    implementation("io.github.vsfe:boj-commons:1.0.1")
     implementation("org.jsoup:jsoup:1.15.3")
 }
 
 gradlePlugin {
     plugins {
         create("bojBootPlugin") {
-            id = "org.vsfe.boj-boot-plugin"
-            implementationClass = "org.vsfe.BojBootPlugin"
+            id = "io.github.vsfe.boj-boot-plugin"
+            implementationClass = "io.github.vsfe.BojBootPlugin"
         }
     }
 }
 
 tasks.test {
     useJUnitPlatform()
+}
+
+kotlin {
+    jvmToolchain(11)
 }

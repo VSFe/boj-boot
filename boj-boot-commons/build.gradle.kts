@@ -1,10 +1,10 @@
 plugins {
-    kotlin("jvm") version "2.0.0"
+    kotlin("jvm") version "1.9.25"
     id("maven-publish")
 }
 
 group = "io.github.vsfe"
-version = "1.0"
+version = "1.0.1"
 
 repositories {
     mavenCentral()
@@ -21,7 +21,7 @@ publishing {
             from(components["java"])
             groupId = "io.github.vsfe"
             artifactId = "boj-commons"
-            version = "1.0.0"
+            version = "1.0.1"
         }
     }
 }
@@ -31,5 +31,5 @@ tasks.test {
 }
 
 kotlin {
-    jvmToolchain(17)
+    jvmToolchain(11)
 }
